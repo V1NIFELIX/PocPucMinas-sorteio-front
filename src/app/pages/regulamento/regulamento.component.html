@@ -1,0 +1,35 @@
+<div class="container container-block">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title">REGULAMENTO</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center-flex main-content-block">
+      <div class="white-block" style="flex-direction: column;padding:2em;">
+        <div class="text-reading" style="text-align: left;">
+          <pdf-viewer src="../../../assets/Regulamento.pdf" [render-text]="true" style="display: block;"></pdf-viewer>
+        </div>
+        <div class="row sign" *ngIf="esconde">
+          <label>
+            <input type="checkbox" [checked]="checktermo" (change)="checktermo = !checktermo" value="">
+            Eu li e concordo com o regulamento da promoção.
+          </label>
+        </div>
+        <div class="row" *ngIf="esconde">
+          <div class="col-md-12 label-marca text-center-flex">
+            <button class="btn-continuar" [disabled]="!checktermo" routerLink="/termo">CONTINUAR</button>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row" *ngIf="!esconde">
+          <div class="col-md-12 label-marca text-center-flex">
+            <button class="btn-continuar" routerLink="/">VOLTAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

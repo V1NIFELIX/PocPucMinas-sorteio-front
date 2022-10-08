@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title">SORTEIOS</h1>
+    </div>
+  </div>
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Carregando...</p>
+  </ngx-spinner>
+  <div class="row">
+    <div class="col-md-12 text-center-flex" style="width: 100%;margin-bottom:8em;">
+      <div class="white-block text-center" style="flex-direction: column;">
+        <div class="row">
+          <div class="col-md-12 scroll">
+            <div id="page">
+              <label class="welcome">Bem vindo,<br> <span class="userName">{{user?.nome}}</span></label>
+              <button style="float: right;" class="btn btn-primary mb1 logout" (click)="logout()"> Sair <i class="fa fa-times-circle"></i></button>
+            </div>
+            <br>
+            <span class="badge badge-secondary float-right pull-right" *ngIf="sorteios?.length > 0">SORTEIOS REALIZADOS: {{sorteios?.length}}</span>
+            <br>
+            <div  *ngIf="sorteios?.length > 0">
+              <accordion [isAnimated]="true" *ngFor="let sorteio of sorteios let i=index">
+                <accordion-group>
+                  <button class="btn btn-link btn-block clearfix" accordion-heading type="button">
+                    <div class="title-compra">
+                      SORTEIO - {{sorteio?.dt_cadastro | slice:0:10 }}
+                    </div>
+                    <div class="title-compra" style="font-size: 10px;">
+                     (CLIQUE PARA VER MAIS INFORMAÇÕES DO SORTEIO)
+                    </div>
+                  </button>
+                  <div class="title-compra" style="color:black">
+                    INFORMAÇÕES DO SORTEIO
+                  </div>
+                  <div class="title-compra" style="color:black">
+                    <button class="btn-enviar" *ngIf="!sorteio?.email_enviado" (click)='enviaEmailSorteados(sorteio.ID)'>Enviar Emails</button>
+                    <button class="btn btn-primary mb1 logout" (click)="baixarRelatorio(i, sorteio.ID, sorteio.dt_cadastro)">Baixar Relatório</button>
+                  </div>
+                  <br>
+                  <div  *ngFor="let sorteio_ of sorteio?.voucher">
+
+                  <hr>
+                  <ul>
+                    <li class="numero-sorteio" [style.color]="sorteio_?.codigo ? '#1e9f00' : '#d30d0d'">{{sorteio_?.codigo}}<br><p *ngIf="sorteio_" class="sorteado">(voucher sorteado)</p></li>
+                  </ul>
+
+                  <table style="width:100%">
+                    <tr>
+                      <th>Nome:</th>
+                      <td>{{sorteio_?.user?.nome}}</td>
+                    </tr>
+                    <tr>
+                      <th>CPF:</th>
+                      <td>{{sorteio_?.user?.cpf}}</td>
+                    </tr>
+                    <tr>
+                      <th>Email:</th>
+                      <td>{{sorteio_?.user?.email}}</td>
+                    </tr>
+                    <tr>
+                      <th>Telefone:</th>
+                      <td>{{sorteio_?.user?.telefone}}</td>
+                    </tr>
+                    <tr>
+                      <th>Cupom Fiscal:</th>
+                      <td>{{sorteio_?.cupom?.chave_nota_fiscal  | slice:0:15 }}...</td>
+                    </tr>
+                    <tr>
+                      <th>CNPJ Loja:</th>
+                      <td>{{sorteio_?.cupom?.dados_empresa.split(' ')[1]}}</td>
+                    </tr>
+                    <tr>
+                      <th>Razao Social:</th>
+                      <td>{{sorteio_?.cupom?.razao_social}}</td>
+                    </tr>
+                    <tr>
+                      <th>Data da Compra:</th>
+                      <td>{{sorteio_?.cupom?.data_emissao}}</td>
+                    </tr>
+                    <tr>
+                      <th>Valor da Compra:</th>
+                      <td>{{sorteio_?.cupom?.valor_total | currency : 'R$'}}</td>
+                    </tr>
+                    <tr>
+                      <th>Sorteado por:</th>
+                      <td>{{sorteio?.usuario_que_fez_o_sorteio}}</td>
+                    </tr>
+                    <tr>
+                      <th>Número Loteria:</th>
+                      <td>{{sorteio?.numeros_loteria}}</td>
+                    </tr>
+                    <tr>
+                      <th>Concurso:</th>
+                      <td>{{sorteio?.concurso}}</td>
+                    </tr>
+                    <tr>
+                      <th>Série:</th>
+                      <td>{{sorteio?.numeros_loteria | slice:0:1}}</td>
+                    </tr>
+                  </table>
+                </div>
+                </accordion-group>
+              </accordion>
+            </div>
+          </div>
+        </div>
+        <div class="row formulario">
+          <div class="col-md-12 label-marca text-center-flex">
+            <button class="btn-continuar" (click)='Sorteia()'>NOVO SORTEIO</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

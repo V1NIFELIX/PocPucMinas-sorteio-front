@@ -1,0 +1,149 @@
+.white-block{
+    margin-top: 2em;
+    background-color: #ffff;
+    width: 90vw;
+    min-height: 250px;
+    max-height: 200vh;
+    border-radius: 2em;
+    padding: 0.5em;
+}
+
+.text-center-flex{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.no-margin{
+  margin: 0px !important;
+}
+
+.title {
+  font-family: 'Gilroy', 'Montserrat', sans-serif;
+  color: #f0cd3d;
+  font-weight: 800;
+  font-size: 27px;
+}
+
+.title-blue {
+  font-family: 'Gilroy', 'Montserrat', sans-serif;
+  color: #d43d2e;
+  font-weight: 800;
+  font-size: 27px;
+}
+
+
+.btn-continuar{
+    
+    background-color: #25c700 !important;
+    color: white !important;
+    padding: 0.3em !important;
+    font-family: 'Gilroy', 'Montserrat', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    width: 200px !important;
+    border-radius: 1em !important;
+}
+
+.btn-continuar:hover{
+    background-color: #1e9f00 !important;
+}
+
+
+
+.formulario > .label-marca{
+  color: #d43d2e;
+  font-weight: 700;
+  font-family: 'Gilroy', 'Montserrat', sans-serif;
+  font-size: 17px;
+  text-align: left;
+}
+
+.col-md-9{
+  max-width: 200px;
+
+}
+.formulario > div > input {
+    background-color: #fce2df;
+    border: unset;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.loja_options {
+  background: #fce2df;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 0 22px 0px 22px;
+}
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) {
+    .white-block{
+        width: 400px;
+    }
+}
+
+
+
+table, th, td {
+  border: 1px transparent;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+
+#page {
+  text-align: left;
+}
+
+.welcome {
+  font-family: 'Gilroy', 'Montserrat', sans-serif;
+  color: #d43d2e;
+  font-weight: 800;
+  font-size: 19px;
+}
+
+.logout{
+background-color: #25c700 !important;
+color: white !important;
+font-family: 'Gilroy', 'Montserrat', sans-serif !important;
+font-size: 17px !important;
+font-weight: 500 !important;
+border-radius: 1em !important;
+border-color: unset;
+}
+
+.input-file{
+  padding: 10px;
+}
+
+
+th {
+  color: #d43d2e;
+  font-weight: 700;
+  font-family: 'Gilroy', 'Montserrat', sans-serif;
+  font-size: 17px;
+  text-align: left;
+}
+
+td {
+  font-family: 'Gilroy', 'Montserrat', sans-serif;
+}
+
+
+select {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 0 10px #E8E8E8 inset;
+  height: 40px;
+  margin: 0 0 0 25px;
+  width: 265px;
+}

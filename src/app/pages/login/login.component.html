@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title">ACESSAR A CONTA</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center-flex" style="width: 100%;margin-bottom:8em;">
+      <div class="white-block text-center" style="flex-direction: column;">
+        <h1 class="label-marca" style="font-size: 17px;">{{ error }}</h1>
+        <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+        <div class="row formulario" style="margin-top:2em;">
+          <div class="col-md-3 label-marca">E-mail: </div>
+          <div class="col-md-9"> <input type="text" (ngModel)="email" name="email" required></div>
+        </div>
+        <div class="row formulario">
+          <div class="col-md-3 label-marca">Senha: </div>
+          <div class="col-md-9"> <input type="password" (ngModel)="password" name="password" required></div>
+        </div>
+        <div class="row formulario">
+          <div class="col-md-12 label-marca text-center-flex">
+            <button type="submit" [disabled]="formData.invalid" class="btn-continuar">FAZER LOGIN</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <app-login-social></app-login-social>
+          </div>
+        </div>
+        <div class="row">
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="title-blue"style="font-size: 17px;">Esqueceu sua senha? <br><b style="cursor:pointer;" routerLink="/recuperar">Recuperar Senha</b></h1>
+            </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

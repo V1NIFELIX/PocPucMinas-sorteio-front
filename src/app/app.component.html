@@ -1,0 +1,20 @@
+<!-- <bs-navbar></bs-navbar> -->
+<div>
+  <div class="container content">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <img class="logo-principal" routerLink="/" src="../assets/logo-sorteio-verao.png" />
+      </div>
+      <div class="col-md-12 text-center">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+    <div class="row only-mobile">
+      <div class="col-md-12 col-footer-mobile">
+        <app-footer></app-footer>
+      </div>
+    </div>
+  </div>
+  <app-footer class="only-desktop"></app-footer>
+</div>

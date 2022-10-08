@@ -1,0 +1,160 @@
+.container-block {
+  margin-top: 25px;
+}
+
+.main-content-block {
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.img-slide {
+  max-height: 150px;
+}
+
+.red-block{
+    background-color: #f0cd3d;
+    border-radius: 2em;
+}
+
+.white-block{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #ffff;
+    width: 90vw;
+    min-height: 250px;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.text-center-flex{
+    display: flex;
+    justify-content: center;
+}
+
+
+.title-red {
+  font-family: 'Gilroy', 'Montserrat', sans-serif;
+  color: #d43d2e;;
+  font-weight: 800;
+  font-size: 1.5em;
+
+}
+
+.title {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    color: #f0cd3d;
+    font-weight: 800;
+    font-size: 27px;
+    padding: 0.9vmin;
+}
+
+.label-error{
+  color: #d43d2e;
+  font-weight: 700;
+  font-family: 'Gilroy', 'Montserrat', sans-serif;
+  font-size: 17px;
+  text-align: center;
+}
+
+.form-input {
+  height: 1.0em;
+}
+
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) {
+
+    .red-block{
+        width: 500px;
+    }
+
+    .white-block{
+        width: 500px !important;
+        min-height: 250px;
+        margin-bottom: 15px
+    }
+    .text-destaque {
+        text-align: justify !important;
+    }
+
+    .formulario > .label-marca{
+        text-align: left !important;
+    }
+
+}
+
+.carousel-indicators > li {
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 219px !important;
+}
+
+.text-destaque {
+    color: white;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    width: 89%;
+}
+
+.text-destaque-centro{
+    color: white;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    width: 89%;
+}
+
+.slogan-promo{
+    color: #f0cd3d;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.formulario > .label-marca{
+    color: #d43d2e;
+    font-weight: 700;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 17px;
+    text-align: left;
+}
+
+.formulario > div > input {
+    background-color: #f7dddb;
+    border: unset;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.campo-login{
+    color: #d43d2e;
+    font-weight: 700;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 0.8em;
+}
+
+.btn-continuar{
+    background-color: #25c700 !important;
+    color: white !important;
+    padding: 0.3em !important;
+    font-family: 'Gilroy', 'Montserrat', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    width: 300px !important;
+    border-radius: 1em !important;
+}
+
+.btn-continuar:hover{
+    background-color: #1e9f00 !important;
+}
+
+
+
+

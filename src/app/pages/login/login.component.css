@@ -1,0 +1,78 @@
+.white-block {
+    margin-top: 2em;
+    background-color: #ffff;
+    width: 90vw;
+    min-height: 250px;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.text-center-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    color: #f0cd3d;
+    font-weight: 800;
+    font-size: 27px;
+}
+
+.title-blue {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    color: #f33223;
+    font-weight: 800;
+    font-size: 27px;
+}
+
+.btn-continuar {
+    background-color: #25c700 !important;
+    color: white !important;
+    padding: 0.3em !important;
+    font-family: 'Gilroy', 'Montserrat', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    width: 200px !important;
+    border-radius: 1em !important;
+}
+
+.btn-continuar:hover {
+    background-color: #1e9f00 !important;
+}
+
+.label-marca {
+    color: #f33223;
+    font-weight: 700;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 17px;
+    text-align: center;
+}
+
+.formulario>.label-marca {
+    color: #f33223;
+    font-weight: 700;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 17px;
+    text-align: left;
+}
+
+.formulario>div>input {
+    background-color: #fce2df;
+    border: unset;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) {
+    .white-block {
+        width: 400px;
+    }
+}

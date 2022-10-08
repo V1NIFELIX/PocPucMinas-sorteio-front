@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title">MEUS CUPONS</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center-flex" style="width: 100%;margin-bottom:8em;">
+      <div class="white-block text-center" style="flex-direction: column;">
+        <div class="row">
+          <div class="col-md-12 scroll">
+            <div id="page">
+              <label class="welcome">Bem vindo,<br> <span class="userName">{{user?.nome}}</span></label>
+              <button style="float: right;" class="btn btn-primary mb1 logout" (click)="logout()"> Sair <i class="fa fa-times-circle"></i></button>
+            </div>
+            <br>
+            <span class="badge badge-secondary float-right pull-right" *ngIf="cupons.length > 0">CUPONS CADASTRADOS: {{cupons.length}}</span>
+            <br>
+            <div  *ngIf="cupons.length > 0">
+              <accordion [isAnimated]="false" *ngFor="let cupom of cupons">
+                <accordion-group>
+                  <button class="btn btn-link btn-block clearfix" accordion-heading type="button">
+                    <div class="title-compra">
+                      COMPRA NO VALOR DE {{cupom?.valor_total | currency:'BRL':true}}
+                    </div>
+                    <div class="title-compra" style="font-size: 10px;">
+                     (CLIQUE PARA VER SEUS VOUCHER DE SORTEIO)
+                    </div>
+                  </button>
+                  <div class="title-compra" style="color:black">
+                    GUARDE SEU CUPOM FISCAL
+                  </div>
+                  <br>
+                  <div class="title-compra" style="font-size: 10px;color:black">
+                    CHAVE DE ACESSO:<br>
+                    {{cupom?.chave_nota_fiscal}}
+                   </div>
+                   <br>
+                  <ul>
+                    <li class="numero-sorteio" [style.color]="voucher?.sorteado ? '#1e9f00' : '#d30d0d'" *ngFor="let voucher of cupom.vouchers">{{voucher?.codigo}}<br><p *ngIf="voucher?.sorteado" class="sorteado">(voucher sorteado)</p></li>
+                  </ul>
+
+                </accordion-group>
+              </accordion>
+            </div>
+          </div>
+        </div>
+        <div class="row formulario">
+          <div class="col-md-12 label-marca text-center-flex">
+            <button class="btn-continuar" routerLink="/cadastrar-cupom">CADASTRAR NOVO CUPOM</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

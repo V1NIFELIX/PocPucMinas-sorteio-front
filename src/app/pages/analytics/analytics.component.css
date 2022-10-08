@@ -1,0 +1,150 @@
+.white-block {
+    margin-top: 2em;
+    background-color: #ffff;
+    width: 90vw;
+    min-height: 250px;
+    border-radius: 2em;
+    padding: 1em;
+    z-index: 10;
+}
+
+.text-center-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    color: #f0cd3d;
+    font-weight: 800;
+    font-size: 27px;
+}
+
+.title-blue {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    color: #d43d2e;
+    font-weight: 800;
+    font-size: 27px;
+}
+
+.subtitle-blue {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    color: #d43d2e;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.count-blue {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    color: #46494b;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.btn-continuar {
+    background-color: #25c700 !important;
+    color: white !important;
+    padding: 0.3em !important;
+    font-family: 'Gilroy', 'Montserrat', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    width: 200px !important;
+    border-radius: 1em !important;
+}
+
+.btn-continuar:hover {
+    background-color: #1e9f00 !important;
+}
+
+.formulario>.label-marca {
+    color: #d30d0d;
+    font-weight: 700;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 17px;
+    text-align: left;
+}
+
+.formulario>div>input {
+    background-color: #fce2df;
+    border: unset;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+
+/*
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) {
+    .white-block {
+        width: 800px;
+    }
+}
+
+table,
+th,
+td {
+    border: 0.3px solid black;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100px;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: left;
+}
+
+.head-sorteio {
+    background-color: white;
+    color: #d43d2e;
+    height: 40px;
+    width: 100%;
+    margin: 0 !important;
+}
+
+.title-semana {
+    color: #fee213;
+    font-family: 'Gilroy', 'Real Head Pro';
+}
+
+.body-sorteio {
+    display: flex;
+    align-items: center;
+}
+
+#simple {
+    font-family: 'Gilroy', Arial, Helvetica, sans-serif;
+    text-transform: capitalize !important;
+}
+
+.head-sorteio>div>h3 {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-family: 'Gilroy', 'Real Head Pro';
+    font-size: 1em !important;
+}
+
+.body-sorteio>div>h3 {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-family: 'Gilroy', 'Real Head Pro';
+    font-size: 13px !important;
+    color: #46494b;
+}
+
+.head-sorteio>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll {
+    margin-top: 2em;
+    overflow-y: scroll;
+    max-height: 350px;
+}

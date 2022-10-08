@@ -1,0 +1,88 @@
+<div class="container content-form">
+  <div class="row">
+    <div class="col-md-12 text-center" style="width: 100%;">
+      <h1 class="title">COMO PARTICIPAR</h1>
+    </div>
+    <div class="col-md-12 text-center-flex" style="width: 100%;">
+      <div class="red-block">
+        <carousel [isAnimated]="true" [showIndicators]="false" [interval]="false" [activeSlide]="activeSlide">
+          <slide>
+            <div class="row">
+              <div class="col-md-12 box-slide">
+                <img src="../../../assets/slide01.png" class="img-slide">
+              </div>
+            </div>
+          </slide>
+          <slide>
+            <div class="row">
+              <div class="col-md-12 box-slide">
+                <img src="../../../assets/slide02.png" class="img-slide">
+              </div>
+            </div>
+          </slide>
+        </carousel>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center-flex" style="width: 100%;">
+      <div class="white-block text-center" style="flex-direction: column;">
+        <form [formGroup]="formUser" (ngSubmit)="onSubmit(formUser)">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="title-red">PREENCHA O FORMULÁRIO</h1>
+            </div>
+          </div>
+          <h1 class="label-error" *ngIf="error">{{ error }}</h1>
+          <div class="row formulario" style="margin-top: 10px">
+            <div class="col-md-3 label-marca">Nome: </div>
+            <div class="col-md-9"> <input type="text" id="nome" name="nome" formControlName="nome" required
+                class="form-input"></div>
+          </div>
+          <div class="row formulario">
+            <div class="col-md-3 label-marca">CPF: </div>
+            <div class="col-md-9"> <input type="text" id="cpf" name="cpf" mask="000.000.000-00" formControlName="cpf"
+                required class="form-input"></div>
+          </div>
+          <div class="row formulario">
+            <div class="col-md-3 label-marca">Bairro: </div>
+            <div class="col-md-9"> <input type="text" id="bairro" name="bairro" formControlName="bairro" required
+                class="form-input"></div>
+          </div>
+          <div class="row formulario">
+            <div class="col-md-3 label-marca">Telefone: </div>
+            <div class="col-md-9"> <input type="text" id="telefone" name="telefone"
+                mask='(00) 0000-0000||(00) 0 0000-0000' formControlName="telefone" required class="form-input"></div>
+          </div>
+          <div class="row formulario">
+            <div class="col-md-3 label-marca">E-mail: </div>
+            <div class="col-md-9"> <input type="text" id="email" name="email" formControlName="email" required
+                class="form-input"></div>
+          </div>
+          <div class="row formulario">
+            <div class="col-md-3 label-marca">Senha: </div>
+            <div class="col-md-9"> <input type="password" id="password" name="password" formControlName="password"
+                required class="form-input"></div>
+          </div>
+          <div class="row formulario">
+            <div class="col-md-12 label-marca text-center-flex">
+              <input type="submit" class="btn-continuar" value="CONTINUAR" *ngIf="!formUser.invalid"
+                [disabled]="formUser.invalid" />
+            </div>
+          </div>
+
+          <hr>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p class="campo-login">Já é cadastrado? <br><b routerLink="/login" style="cursor:pointer;">Fazer login</b>
+              </p>
+            </div>
+            <div class="col-md-12">
+              <app-login-social></app-login-social>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,276 @@
+.red-block {
+    background-color: #f33223;
+    width: 90vw;
+    min-height: 295px;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.white-block {
+    margin-top: 2em;
+    background-color: #ffff;
+    width: 90vw;
+    min-height: 250px;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.text-center-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    color: #f33223;
+    font-weight: 800;
+    font-size: 27px;
+}
+
+.btn-cadastro {
+    background-color: #37408b;
+    border-color: #37408b !important;
+    margin-bottom: 1.6em;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gilroy', 'Real Head Pro';
+    border-radius: 15px;
+    width: 40%;
+    padding: 5rem!important;
+    font-size: 1.7em;
+    text-transform: uppercase;
+}
+
+.btn-cadastro01 {
+    background-color: #37408b;
+    border-color: #37408b !important;
+    margin-bottom: 1.6em;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gilroy', 'Real Head Pro';
+    border-radius: 15px;
+    width: 90%;
+    padding: 5rem!important;
+    font-size: 1.7em;
+    text-transform: uppercase;
+}
+
+.btn-cadastro02 {
+    background-color: #4d5ac3;
+    border-color: #4d5ac3 !important;
+    margin-bottom: 1.6em;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gilroy';
+    border-radius: 15px;
+    width: 70%;
+    padding: 5rem!important;
+    font-size: 1.7em;
+    text-transform: uppercase;
+}
+
+.btn-cadastro:active,
+.btn-cadastro:visited {
+    background-color: #f0cd3d;
+}
+
+.flex-column {
+    flex-direction: column!important;
+}
+
+.btn-cadastro>img {
+    margin-right: 0.5em;
+}
+
+.text-cadastro {
+    font-size: 1.7em;
+    line-height: 1.01em;
+}
+
+.row-center {
+    justify-content: center;
+}
+
+.btn-action>img {
+    margin: 0 4%;
+    width: 25px;
+}
+
+
+a:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+
+
+
+.coluna-botoes {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-direction: column;
+}
+
+.btn-action {
+    color: #3c4d6b;
+    font-family: 'Gilroy';
+    text-transform: uppercase;
+    background: #f0cd3d;
+    border-radius: 15px;
+    margin: 4px;
+}
+
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) {
+
+
+
+    #btn1 {
+        width: 800px;
+        background: #f0cd3d;
+        text-transform: uppercase;
+        border-radius: 15px;
+    }
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+    .red-block {
+        width: 500px !important;
+        height: 250px;
+    }
+    .white-block {
+        width: 500px !important;
+        min-height: 250px;
+    }
+    .text-destaque {
+        text-align: justify !important;
+    }
+    .formulario>.label-marca {
+        text-align: right !important;
+    }
+    .btn-c1 {
+        background-color: #37408b;
+        border-color: #37408b !important;
+        margin-bottom: 1.6em;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Gilroy', 'Real Head Pro';
+        border-radius: 25px;
+        width: 53.4%;
+        padding: 2.7rem!important;
+        font-size: 1.7em;
+        text-transform: uppercase;
+    }
+    .btn-c2 {
+        background-color: #4d5ac3;
+        border-color: #4d5ac3 !important;
+    }
+    .flex-column {
+        flex-direction: row!important;
+    }
+    .width-grid {
+        background: #b4382d;
+        text-transform: uppercase;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.carousel-indicators>li {
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 219px !important;
+}
+
+.carousel-indicators>.active {}
+
+.text-destaque {
+    color: white;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    width: 89%;
+}
+
+.text-destaque-centro {
+    color: white;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    width: 89%;
+}
+
+.slogan-promo {
+    color: #ffd530;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.formulario>.label-marca {
+    color: #d30d0d;
+    font-weight: 700;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 17px;
+    text-align: left;
+}
+
+.formulario>div>input {
+    background-color: #fce2df;
+    border: unset;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.campo-login {
+    color: #d30d0d;
+    font-weight: 700;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+
+.btn-continuar {
+    background-color: #25c700 !important;
+    color: white !important;
+    padding: 0.3em !important;
+    font-family: 'Gilroy', 'Montserrat', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    width: 200px !important;
+    border-radius: 1em !important;
+}
+
+.btn-continuar:hover {
+    background-color: #1e9f00 !important;
+}

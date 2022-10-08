@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title">COMPROVANTES DE RETIRADA</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center-flex" style="width: 100%;margin-bottom:8em;">
+      <div class="white-block text-center" style="flex-direction: column;">
+        <div class="row">
+          <div class="col-md-12 scroll">
+            <div id="page">
+              <label class="welcome">Bem vindo,<br> <span class="userName">{{user?.nome}}</span></label>
+              <button style="float: right;" class="btn btn-primary mb1 logout" (click)="logout()"> Sair <i
+                  class="fa fa-times-circle"></i></button>
+            </div>
+            <div  *ngIf="vouchersPendentes?.length > 0">
+              <accordion [isAnimated]="true" *ngFor="let voucher of vouchersPendentes">
+                <accordion-group>
+                  <button class="btn btn-link btn-block clearfix" accordion-heading type="button">
+                    <div class="title-compra">
+                      Associado - {{voucher?.RAZAO_SOCIAL}}
+                    </div>
+                    <div class="title-compra" style="font-size: 10px;">
+                     (CLIQUE PARA VER MAIS INFORMAÇÕES)
+                    </div>
+                  </button>
+                  <div class="title-compra" style="color:black">
+                    INFORMAÇÕES DO VOUCHER
+                  </div>
+                  <table>
+                    <tr>
+                      <th>Usuario:</th>
+                      <td>{{voucher?.user}}</td>
+                    </tr>
+                    <tr>
+                      <th>Cupom:</th>
+                      <td>{{voucher?.cupom}}</td>
+                    </tr>
+                    <tr>
+                      <th>Codigo:</th>
+                      <td>{{voucher?.codigo}}</td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <th>Valor:</th>
+                      <td>{{voucher?.valor_total}}</td>
+                    </tr>
+                    <tr>
+                      <th>Sorteado:</th>
+                      <td>{{voucher?.sorteado ? 'Sim' : 'Não'}}</td>
+                    </tr>
+                  </table>
+                  <div class="title-compra" style="color:black">
+                    INFORMAÇÕES DO ASSOCIADO
+                  </div>
+                  <table>
+                    <tr>
+                      <th>Associado:</th>
+                      <td>{{voucher?.RAZAO_SOCIAL}}</td>
+                    </tr>
+                    <tr>
+                      <th>CNPJ:</th>
+                      <td>{{voucher?.CNPJ}}</td>
+                    </tr>
+                    <tr>
+                      <th>Telefone:</th>
+                      <td>{{voucher?.TELEFONE}}</td>
+                    </tr>
+                    <tr>
+                      <th>ASSOC:</th>
+                      <td>{{voucher?.ASSOC}}</td>
+                    </tr>
+                    <tr>
+                      <th>Carta de Compromisso:</th>
+                      <button type="button" class="btn button" (click)="downloadComprovante(voucher?.carta_compromisso)">Download</button>
+                    </tr>
+                    <tr>
+                      <th>Recibo de entrega</th>
+                      <button type="button" class="btn button" (click)="downloadComprovante(voucher?.recibo_entrega_premio)">Download</button>
+                    </tr>
+                  </table>
+                  <form>
+                    <div class="d-flex justify-content-center">
+                      <button type="button" class="btn button" (click)="patchAprovar(voucher?.codigo)">Aprovar</button>
+                    </div>
+                  </form>
+                </accordion-group>
+              </accordion>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

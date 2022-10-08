@@ -1,0 +1,165 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title">CONSULTAR VOUCHER</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center-flex">
+      <div class="white-block text-center" style="flex-direction: column;">
+        <div id="page">
+          <label class="welcome">Bem vindo, <span class="userName">{{user?.nome}}</span></label>
+          <button style="float: right;" class="btn btn-primary mb1 logout" (click)="logout()"> Sair <i
+              class="fa fa-times-circle"></i></button>
+        </div>
+        <div *ngIf="!dandoBaixa">
+          <form #formData='ngForm' (ngSubmit)="consultaVoucher(formData.value.voucher);formData.reset();">
+            <div class="row formulario">
+              <div class="col-md-3 label-marca">Código: </div>
+              <div class="col-md-9"> <input type="text" (ngModel)="voucher" name="voucher" required></div>
+            </div>
+            <div class="row formulario">
+              <div class="col-md-12 label-marca text-center-flex">
+                <button type="submit" class="btn-continuar">Consultar</button>
+              </div>
+            </div>
+          </form>
+          <br>
+          <table style="width:100%" *ngIf="voucher">
+            <tr>
+              <th>Nome:</th>
+              <td>{{client?.nome}}</td>
+            </tr>
+            <tr>
+              <th>CPF:</th>
+              <td>{{client?.cpf}}</td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td>{{client?.email}}</td>
+            </tr>
+            <tr>
+              <th>Telefone:</th>
+              <td>{{client?.telefone}}</td>
+            </tr>
+            <tr>
+              <th>Cupom Fiscal:</th>
+              <td>{{voucher?.chave_nota_fiscal | slice:0:15 }}..</td>
+            </tr>
+            <tr>
+              <th>Razao Social:</th>
+              <td>{{voucher?.razao_social }}</td>
+            </tr>
+            <tr>
+              <th>Valor Total:</th>
+              <td>{{voucher?.valor_total}}</td>
+            </tr>
+            <tr>
+              <th>CNPJ:</th>
+              <td>{{voucher?.dados_empresa.split(' ')[1] }}</td>
+            </tr>
+            <tr>
+              <th>Retirou Prêmio:</th>
+              <td>{{voucher?.retirou_premio ? 'Retirou' : 'Não Retirou'}}</td>
+            </tr>
+            <tr *ngIf="voucher?.info_baixa">
+              <th>CPF do Funcionario:</th>
+              <td>{{voucher?.info_baixa?.cpf_funcionario}}</td>
+            </tr>
+            <tr *ngIf="voucher?.info_baixa">
+              <th>CNPJ da Loja:</th>
+              <td>{{voucher?.info_baixa?.loja}}</td>
+            </tr>
+            <tr *ngIf="voucher?.info_baixa">
+              <th>Data da Retirada:</th>
+              <td>{{voucher?.info_baixa?.data_retirada}}</td>
+            </tr>
+            <tr>
+            </tr>
+          </table>
+          <div *ngIf="voucher && voucher.retirou_premio != true && voucher.sorteado == true ">
+            <button type="button" (click)='MudarParadandoBaixa()' class="btn-continuar">Dar Baixa no Prêmio</button>
+          </div>
+        </div>
+
+        <div *ngIf="dandoBaixa">
+          <form [formGroup]="formBaixa" (ngSubmit)="atualizaVoucher()">
+            <div class="row formulario">
+              <div class="col-md-3 label-marca">CPF Funcionario: </div>
+              <div class="col-md-9"> <input type="text" mask="000.000.000-00"
+                formControlName="cpf_funcionario"></div>
+            </div>
+            <div class="row formulario">
+              <div class="col-md-3 label-marca ">Loja: </div>
+              <select class="loja_options" formControlName="loja">
+                <option *ngFor="let loja of lojas" value="{{loja.ID}}">{{loja.NUMERO_LOJA}} - {{loja.RAZAO_SOCIAL}}
+                </option>
+              </select>
+            </div>
+            <div class="row formulario">
+              <div class="col-md-3 label-marca">Data da Retirada: </div>
+              <div class="col-md-9"> <input type="date" formControlName="data_retirada"></div>
+            </div>
+            <div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="form-group d-flex flex-column no-margin">
+                        <label for='files1'>Carta de Compromisso</label>
+                        <input (change)="fileChange1($event)" type="file" name="files1" class="input-file" formControlName="cartaCompromisso" />
+                      </div>
+                      <div class='form-group d-flex flex-column no-margin'>
+                        <label for='files2'>Recibo de Entrega</label>
+                        <input (change)="fileChange2($event)" type="file" name="files2" class="input-file" formControlName="reciboEntregaPremio"  />
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row formulario">
+              <div class="col-md-12 label-marca text-center-flex">
+                <button  type="submit" class="btn-continuar" [disabled]="!formBaixa.valid" >Salvar</button>
+              </div>
+              <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+                <p style="font-size: 20px; color: white">Carregando...</p>
+              </ngx-spinner>
+            </div>
+          </form>
+          <br>
+          <table style="width:100%" *ngIf="voucher">
+            <tr>
+              <th>Código:</th>
+              <td>{{voucher?.codigo}}</td>
+            </tr>
+            <tr>
+              <th>Nome:</th>
+              <td>{{client?.nome}}</td>
+            </tr>
+            <tr>
+              <th>CPF:</th>
+              <td>{{client?.cpf}}</td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td>{{client?.email}}</td>
+            </tr>
+            <tr>
+              <th>Telefone:</th>
+              <td>{{client?.telefone}}</td>
+            </tr>
+            <tr>
+              <th>Cupom Fiscal:</th>
+              <td>{{voucher?.chave_nota_fiscal | slice:0:15 }}..</td>
+            </tr>
+            <tr>
+              <th>Retirou Prêmio:</th>
+              <td>{{voucher?.retirou_premio ? 'Retirou' : 'Não Retirou'}}</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="col-md-12 label-marca">Em caso de dúvidas, entre em contato:<br> <b>21 98843-2744</b> </div>
+      </div>
+    </div>
+  </div>
+</div>

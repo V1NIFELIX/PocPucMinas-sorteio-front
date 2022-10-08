@@ -1,0 +1,87 @@
+.background {
+    background-image: url('../assets/bg_rose.png');
+    background-color: #fee213;
+    width: 100%;
+    height: fit-content;
+    top: 0;
+    position: absolute;
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: auto 100%;
+}
+
+.content {
+    /* margin-top: 2em; */
+    margin-bottom: 2em;
+}
+
+.logo {
+  width: 75%;
+}
+
+.logo-principal{
+  max-width: 650px;
+  max-height: 450px;
+}
+
+@media (max-width: 900px) {
+  .logo {
+    width: 100% !important;
+  }
+
+  .logo-principal{
+    width: 100% !important;
+  }
+}
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .content {
+        max-height: 1100px;
+    }
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 901px) {
+  .content {
+      max-height: 1298px !important;
+  }
+
+  app-footer{
+    margin-top: 1em;
+  }
+}
+
+.only-mobile{
+  display: none;
+}
+
+.only-desktop{
+  display: block;
+}
+
+@media (max-width: 900px){
+  .only-mobile{
+    display: block;
+  }
+
+  .only-desktop{
+    display: none;
+  }
+
+
+}
+.col-footer-mobile{
+  padding: 0 !important;
+}
+
+
+

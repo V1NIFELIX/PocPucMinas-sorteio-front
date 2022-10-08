@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title">FINALIZAR CADASTRO</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center-flex" style="width: 100%;margin-bottom:8em;">
+      <div class="white-block text-center" style="flex-direction: column;">
+        <div id="page">
+          <label class="welcome">Bem vindo,<br> <span class="userName">{{user?.nome}}</span></label>
+          <button style="float: right;" class="btn btn-primary mb1 logout" (click)="logout()"> Sair <i class="fa fa-times-circle"></i></button>
+        </div>
+        <h1 class="title" style="font-size: 17px;">{{ error }}</h1>
+        <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+        <div class="row formulario" style="margin-top:2em;">
+          <div class="col-md-3 label-marca">CPF: </div>
+          <div class="col-md-9"> <input type="text" (ngModel)="cpf" name="cpf" mask="000.000.000-00"  required></div>
+        </div>
+        <div class="row formulario">
+          <div class="col-md-3 label-marca">Telefone: </div>
+          <div class="col-md-9"> <input type="text" (ngModel)="telefone" name="telefone" mask='(00) 0000-0000||(00) 0 0000-0000'  required></div>
+        </div>
+        <div class="row formulario">
+          <div class="col-md-3 label-marca">Bairro: </div>
+          <div class="col-md-9"> <input type="text" (ngModel)="bairro" name="bairro" required></div>
+        </div>
+        <div class="row formulario">
+          <div class="col-md-12 label-marca text-center-flex">
+            <button type="submit" [disabled]="formData.invalid" *ngIf="!formData.invalid"  class="btn-continuar">FINALIZAR</button>
+          </div>
+        </div>
+
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

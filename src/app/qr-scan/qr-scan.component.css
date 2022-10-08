@@ -1,0 +1,9 @@
+#search-button {
+  width: 100px;
+  height: 50px;
+}
+
+#search-button svg {
+  width: 60px;
+  height: 60px;
+}
